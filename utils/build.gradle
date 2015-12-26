@@ -37,9 +37,8 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
 }
 
-
-def siteUrl = 'https://github.com/AlanCheen/CrashCatcher'      // 项目的主页
-def gitUrl = 'git@github.com:AlanCheen/CrashCatcher.git'   // Git仓库的url
+def siteUrl = 'https://github.com/AlanCheen/Utils'      // 项目的主页
+def gitUrl = 'git@github.com:AlanCheen/Utils.git'   // Git仓库的url
 group = "me.yifeiyuan.utils"                                        // Maven Group ID for the artifact，一般填你唯一的包名
 install {
     repositories.mavenInstaller {
