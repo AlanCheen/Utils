@@ -25,9 +25,9 @@ import android.support.annotation.NonNull;
 public class PathUtil {
 
     /**
-     * 测量path的长度
-     * @param path
-     * @return path的长度
+     *  测量path的长度
+     *  @param path
+     *  @return path的长度
      */
     public static float measurePath(@NonNull Path path) {
         PathMeasure measure = new PathMeasure(path, false);
