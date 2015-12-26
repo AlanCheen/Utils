@@ -13,24 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package me.yifeiyuan.utils;
 
-import android.graphics.Path;
-import android.graphics.PathMeasure;
-import android.support.annotation.NonNull;
+package me.yifeiyuan.utils;
 
 /**
  * Created by 程序亦非猿 on 15/12/26.
  */
-public class PathUtil {
-
-    /**
-     * 测量path的长度
-     * @param path
-     * @return path的长度
-     */
-    public static float measurePath(@NonNull Path path) {
-        PathMeasure measure = new PathMeasure(path, false);
-        return measure.getLength();
-    }
+public class BitmapUtil {
 }
