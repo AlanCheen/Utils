@@ -13,25 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package me.yifeiyuan.utils;
 
-import android.graphics.Path;
-import android.graphics.PathMeasure;
-import android.support.annotation.NonNull;
+import android.graphics.DashPathEffect;
 
 /**
- * Created by 程序亦非猿 on 15/12/26.
+ * Created by 程序亦非猿 on 15/12/27.
  */
-public class PathUtil {
+public class PathEffectUtil {
 
     /**
-     *  测量path的长度
-     *  @param path
-     *  @return path的长度
+     * 生成一个可用作Path动画的DashPathEffect
+     * @param pathLength path的长度
+     * @param phase 阶段
+     * @return
      */
-    public static float measurePath(@NonNull Path path) {
-        PathMeasure measure = new PathMeasure(path, false);
-        return measure.getLength();
+    public DashPathEffect create(float pathLength, int phase) {
+        return new DashPathEffect(new float[]{pathLength*(1-phase),pathLength},0);
     }
-
 }
