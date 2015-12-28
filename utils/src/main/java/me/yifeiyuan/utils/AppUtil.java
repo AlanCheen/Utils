@@ -27,7 +27,7 @@ public class AppUtil {
 
     /**
      * @param context 上下文
-     * @return app的版本名
+     * @return app的版本名 默认为""
      */
     public static String getVersionName(Context context)
     {
@@ -46,7 +46,7 @@ public class AppUtil {
     /**
      *
      * @param context 上下文
-     * @return 获取版本号
+     * @return 获取版本号 默认为0
      */
     public static int getVersionCode(Context context)
     {
