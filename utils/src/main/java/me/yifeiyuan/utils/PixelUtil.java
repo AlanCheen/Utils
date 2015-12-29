@@ -29,9 +29,19 @@ public class PixelUtil {
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dpValue, context.getResources().getDisplayMetrics());
     }
 
-
-    public static float px2dp(@NonNull Context context, float pxValue) {
-        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_PX, pxValue, context.getResources().getDisplayMetrics());
+    public static float sp2px(@NonNull Context context, float pxValue) {
+        return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_SP, pxValue, context.getResources().getDisplayMetrics());
     }
 
+    public static int px2dp(@NonNull Context context, float pxValue)
+    {
+        final float density = context.getResources().getDisplayMetrics().density;
+        return (int) (pxValue / density + 0.5f);
+    }
+
+    public static int px2sp(@NonNull Context context,float pxValue)
+    {
+        final float scale = context.getResources().getDisplayMetrics().scaledDensity;
+        return (int)(pxValue / scale + 0.5f);
+    }
 }
