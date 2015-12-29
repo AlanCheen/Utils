@@ -26,37 +26,34 @@ import android.content.pm.PackageManager;
 public class AppUtil {
 
     /**
+     * 获取app的版本名
+     *
      * @param context 上下文
      * @return app的版本名 默认为""
      */
-    public static String getVersionName(Context context)
-    {
+    public static String getVersionName(Context context) {
         PackageManager pm = context.getPackageManager();
-        try
-        {
+        try {
             PackageInfo packageInfo = pm.getPackageInfo(context.getPackageName(), 0);
             return packageInfo.versionName;
-        } catch (PackageManager.NameNotFoundException e)
-        {
+        } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
         return "";
     }
 
     /**
+     * 获取app的版本号
      *
      * @param context 上下文
      * @return 获取版本号 默认为0
      */
-    public static int getVersionCode(Context context)
-    {
+    public static int getVersionCode(Context context) {
         PackageManager pm = context.getPackageManager();
-        try
-        {
+        try {
             PackageInfo packageInfo = pm.getPackageInfo(context.getPackageName(), 0);
             return packageInfo.versionCode;
-        } catch (PackageManager.NameNotFoundException e)
-        {
+        } catch (PackageManager.NameNotFoundException e) {
             e.printStackTrace();
         }
         return 0;

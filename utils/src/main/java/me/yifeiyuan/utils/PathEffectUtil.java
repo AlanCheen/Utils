@@ -29,7 +29,7 @@ public class PathEffectUtil {
      * 效果 从头画到尾
      * @param pathLength path的长度 可以通过{@link me.yifeiyuan.utils.PathUtil#measurePath(Path)}来测量path的长度
      * @param phase 阶段
-     * @return
+     * @return DashPathEffect
      */
     public DashPathEffect createAnimPathEffect(float pathLength, int phase) {
         return new DashPathEffect(new float[]{pathLength*(1-phase),pathLength},0);

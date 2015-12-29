@@ -30,18 +30,21 @@ import java.io.OutputStream;
 
 /**
  * Created by 程序亦非猿 on 15/12/26.
+ *
+ * 存放跟Bitmap相关的util
  */
 public class BitmapUtil {
 
     /**
      * 将Bitmap保存到file中
-     * @param file   目标文件
-     * @param bitmap 目标Bitmap
-     * @param format 保存的格式,具体可看{@link android.graphics.Bitmap.CompressFormat}
+     *
+     * @param file    目标文件
+     * @param bitmap  目标Bitmap
+     * @param format  保存的格式,具体可看{@link android.graphics.Bitmap.CompressFormat}
      * @param quality 0-100
      * @return 保存是否成功
      */
-    public static boolean saveBitmapToFile(@NonNull File file,@NonNull Bitmap bitmap,@NonNull Bitmap.CompressFormat format,int quality) {
+    public static boolean saveBitmapToFile(@NonNull File file, @NonNull Bitmap bitmap, @NonNull Bitmap.CompressFormat format, int quality) {
 
         OutputStream os = null;
         boolean isSuccess = false;
@@ -62,8 +65,9 @@ public class BitmapUtil {
 
     /**
      * 获取bitmap的大小
+     *
      * @param bitmap
-     * @return  bitmap的大小
+     * @return bitmap的大小
      */
     public static int getBitmapSize(@NonNull Bitmap bitmap) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {    //API 19
@@ -76,8 +80,8 @@ public class BitmapUtil {
     }
 
     /**
+     * 计算inSampleSize,该方法源自Android官网
      *
-     * 计算inSampleSize
      * @param options
      * @param reqWidth
      * @param reqHeight
