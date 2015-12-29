@@ -49,6 +49,8 @@ public class DeviceUtil {
     /**
      * 网络是否连接
      *
+     * 注意需要权限: {@link android.Manifest.permission#ACCESS_NETWORK_STATE}
+     *
      * @param context 上下文
      * @return true 如果网络连接着
      */
@@ -60,13 +62,15 @@ public class DeviceUtil {
 
     /**
      * wifi是否连接可用
+     * <p/>
+     * 注意需要权限: {@link android.Manifest.permission#ACCESS_NETWORK_STATE}
      *
      * @param context
      * @return true 如果wifi可用
      */
     public static boolean isWifiConnected(Context context) {
-        ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo info = manager.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo info = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
         return info != null && info.isConnected();
     }
 
