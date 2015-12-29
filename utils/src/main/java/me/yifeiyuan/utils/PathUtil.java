@@ -26,7 +26,7 @@ public class PathUtil {
 
     /**
      *  测量path的长度
-     *  @param path
+     *  @param path 需要测量的path
      *  @return path的长度
      */
     public static float measurePath(@NonNull Path path) {

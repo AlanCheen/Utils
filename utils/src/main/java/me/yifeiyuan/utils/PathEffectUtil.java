@@ -17,6 +17,7 @@
 package me.yifeiyuan.utils;
 
 import android.graphics.DashPathEffect;
+import android.graphics.Path;
 
 /**
  * Created by 程序亦非猿 on 15/12/27.
@@ -25,11 +26,12 @@ public class PathEffectUtil {
 
     /**
      * 生成一个可用作Path动画的DashPathEffect
-     * @param pathLength path的长度
+     * 效果 从头画到尾
+     * @param pathLength path的长度 可以通过{@link me.yifeiyuan.utils.PathUtil#measurePath(Path)}来测量path的长度
      * @param phase 阶段
      * @return
      */
-    public DashPathEffect create(float pathLength, int phase) {
+    public DashPathEffect createAnimPathEffect(float pathLength, int phase) {
         return new DashPathEffect(new float[]{pathLength*(1-phase),pathLength},0);
     }
 }
