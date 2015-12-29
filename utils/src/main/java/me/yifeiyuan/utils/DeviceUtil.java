@@ -62,7 +62,7 @@ public class DeviceUtil {
 
     /**
      * wifi是否连接可用
-     * <p/>
+     *
      * 注意需要权限: {@link android.Manifest.permission#ACCESS_NETWORK_STATE}
      *
      * @param context

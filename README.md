@@ -1,14 +1,34 @@
 # Utils
 Android Utils
 
-utils 集合
+android 常用utils的集合,持续更新,欢迎pr
+
+## 目录
+
+- AppUtil
+- Base64
+- BitmapUtil
+- DeviceUtil
+- FileUtil
+- IoUtil
+- PathEffectUtil
+- PathUtil
+- PixelUtil
+- SDCardUtil
 
 
+## Usage
 
+### AndroidStudio
 
+```
+    compile 'me.yifeiyuan.utils:utils:0.1.3'
 
+```
 
+## minSdkVersion
 
+`minSdkVersion 11`
 
 ## License
 
