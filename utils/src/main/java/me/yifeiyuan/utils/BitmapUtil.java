@@ -18,7 +18,12 @@ package me.yifeiyuan.utils;
 
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
+import android.graphics.ColorFilter;
+import android.graphics.LightingColorFilter;
+import android.graphics.Paint;
 import android.os.Build;
+import android.support.annotation.IntegerRes;
 import android.support.annotation.NonNull;
 
 import java.io.BufferedOutputStream;
@@ -108,4 +113,26 @@ public class BitmapUtil {
 
         return inSampleSize;
     }
+
+
+
+    /**
+     * 给bitmap着色
+     * @param sourceBitmap dest
+     * @param color  颜色资源id
+     * @return
+     */
+    public static Bitmap changeBitmapColor(@NonNull Bitmap sourceBitmap, @IntegerRes int color) {
+
+        Bitmap resultBitmap = Bitmap.createBitmap(sourceBitmap, 0, 0,
+                sourceBitmap.getWidth() - 1, sourceBitmap.getHeight() - 1);
+        Paint p = new Paint();
+        ColorFilter filter = new LightingColorFilter(color, 1);
+        p.setColorFilter(filter);
+
+        Canvas canvas = new Canvas(resultBitmap);
+        canvas.drawBitmap(resultBitmap, 0, 0, p);
+        return resultBitmap;
+    }
+
 }
