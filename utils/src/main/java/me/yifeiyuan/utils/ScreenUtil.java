@@ -17,6 +17,7 @@
 package me.yifeiyuan.utils;
 
 import android.content.Context;
+import android.support.annotation.NonNull;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 import android.view.WindowManager;
@@ -32,7 +33,7 @@ public class ScreenUtil {
      * @param context
      * @return
      */
-    public static int getScreenWidth(Context context) {
+    public static int getScreenWidth(@NonNull Context context) {
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics outMetrics = new DisplayMetrics();
         wm.getDefaultDisplay().getMetrics(outMetrics);
@@ -45,7 +46,7 @@ public class ScreenUtil {
      * @param context
      * @return
      */
-    public static int getScreenHeight(Context context) {
+    public static int getScreenHeight(@NonNull Context context) {
         WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics outMetrics = new DisplayMetrics();
         wm.getDefaultDisplay().getMetrics(outMetrics);
@@ -55,9 +56,9 @@ public class ScreenUtil {
     /**
      * 获取状态栏高度
      * @param context
-     * @return
+     * @return 状态栏高度  默认为0
      */
-    public static int getStatusBarHeight(Context context) {
+    public static int getStatusBarHeight(@NonNull Context context) {
         int result = 0;
 
         int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen", "android");
@@ -72,9 +73,9 @@ public class ScreenUtil {
     /**
      * 获取toolbar的高度
      * @param context
-     * @return
+     * @return 默认为0
      */
-    public static int getToolbarHeight(Context context) {
+    public static int getToolbarHeight(@NonNull Context context) {
         TypedValue typedValue = new TypedValue();
 
         if (context.getTheme().resolveAttribute(android.R.attr.actionBarSize, typedValue, true)) {
