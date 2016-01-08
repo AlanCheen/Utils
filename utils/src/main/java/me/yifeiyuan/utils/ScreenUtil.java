@@ -16,10 +16,14 @@
 
 package me.yifeiyuan.utils;
 
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.Rect;
 import android.support.annotation.NonNull;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
+import android.view.View;
 import android.view.WindowManager;
 
 /**
@@ -84,4 +88,48 @@ public class ScreenUtil {
 
         return 0;
     }
+
+    /**
+     * 获取当前屏幕截图 包含状态栏
+     * @param activity
+     * @return
+     */
+    public static Bitmap snapShotWithStatusBar(@NonNull Activity activity) {
+        View view = activity.getWindow().getDecorView();
+        view.setDrawingCacheEnabled(true);
+        view.buildDrawingCache();
+        Bitmap bmp = view.getDrawingCache();
+        int width = getScreenWidth(activity);
+        int height = getScreenHeight(activity);
+        Bitmap bp = null;
+        bp = Bitmap.createBitmap(bmp, 0, 0, width, height);
+        view.destroyDrawingCache();
+        return bp;
+
+    }
+
+    /**
+     * 获取当前屏幕截图 但不包含状态栏
+     * @param activity
+     * @return
+     */
+    public static Bitmap snapShotWithoutStatusBar(@NonNull Activity activity) {
+        View view = activity.getWindow().getDecorView();
+        view.setDrawingCacheEnabled(true);
+        view.buildDrawingCache();
+        Bitmap bmp = view.getDrawingCache();
+        Rect frame = new Rect();
+        view.getWindowVisibleDisplayFrame(frame);
+        int statusBarHeight = frame.top;
+
+        int width = getScreenWidth(activity);
+        int height = getScreenHeight(activity);
+        Bitmap bp = null;
+        bp = Bitmap.createBitmap(bmp, 0, statusBarHeight, width, height- statusBarHeight);
+        view.destroyDrawingCache();
+        return bp;
+
+    }
+
+
 }
