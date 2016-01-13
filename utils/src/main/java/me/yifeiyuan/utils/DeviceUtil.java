@@ -34,6 +34,7 @@ import java.io.FileFilter;
  * 2.isNetworkConnected     网络是否连接
  * 3.isWifiConnected        wifi是否可用
  * 4.getCurNetType          当前网络
+ * 5.getCountOfCPU          获取设备CPU数量
  */
 public class DeviceUtil {
 
