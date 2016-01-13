@@ -64,7 +64,7 @@ public class DeviceUtil {
      * @param context 上下文
      * @return true 如果网络连接着
      */
-    public static boolean isNetworkConnected(Context context) {
+    public static boolean isNetworkConnected(@NonNull Context context) {
         ConnectivityManager manager = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo info = manager.getActiveNetworkInfo();
         return null != info && info.isAvailable();
@@ -78,7 +78,7 @@ public class DeviceUtil {
      * @param context
      * @return true 如果wifi可用
      */
-    public static boolean isWifiConnected(Context context) {
+    public static boolean isWifiConnected(@NonNull Context context) {
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo info = cm.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
         return info != null && info.isConnected();
@@ -90,7 +90,7 @@ public class DeviceUtil {
      * @param context
      * @return 没网返回"" , 有网返回 2g / 3g /4g/wifi
      */
-    public static String getCurNetType(Context context) {
+    public static String getCurNetType(@NonNull Context context) {
         String type = "";
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo info = cm.getActiveNetworkInfo();
