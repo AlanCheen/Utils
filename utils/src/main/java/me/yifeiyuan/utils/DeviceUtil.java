@@ -118,15 +118,12 @@ public class DeviceUtil {
 
 
     /**
-     *
-     * @By 小邓子
+     * 来自 小邓子
      * Linux中的设备都是以文件的形式存在，CPU也不例外，因此CPU的文件个数就等价与核数。
      * Android的CPU 设备文件位于/sys/devices/system/cpu/目录，文件名的的格式为cpu\d+。
      *
-     * 引用：http://www.jianshu.com/p/f7add443cd32#，感谢 liangfeizc :)
+     * 引用：http://www.jianshu.com/p/f7add443cd32#，感谢 liangfeizc :) (梁飞)
      * https://github.com/facebook/device-year-class
-     */
-    /**
      *
      * @return CPU的个数 默认为1
      */
