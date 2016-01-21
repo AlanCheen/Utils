@@ -16,10 +16,12 @@
 
 package me.yifeiyuan.utils;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Rect;
+import android.os.Build;
 import android.support.annotation.NonNull;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
@@ -57,6 +59,7 @@ public class ScreenUtil {
         return outMetrics.heightPixels;
     }
 
+
     /**
      * 获取状态栏高度
      * @param context
@@ -88,6 +91,29 @@ public class ScreenUtil {
 
         return 0;
     }
+
+
+
+    @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR1)
+    private int getSoftButtonsBarHeight(@NonNull Context context) {
+
+        WindowManager wm = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
+
+        DisplayMetrics metrics = new DisplayMetrics();
+
+        wm.getDefaultDisplay().getMetrics(metrics);
+        int usableHeight = metrics.heightPixels;
+
+        wm.getDefaultDisplay().getRealMetrics(metrics);
+        int realHeight = metrics.heightPixels;
+
+        if (realHeight > usableHeight) {
+            return realHeight - usableHeight;
+        } else {
+            return 0;
+        }
+    }
+
 
     /**
      * 获取当前屏幕截图 包含状态栏

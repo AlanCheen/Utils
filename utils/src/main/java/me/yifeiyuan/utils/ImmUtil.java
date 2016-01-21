@@ -27,7 +27,7 @@ import android.view.inputmethod.InputMethodManager;
  *
  *  隐藏/显示输入法
  */
-public class ImmUtils {
+public class ImmUtil {
 
     /**
      * 隐藏输入法

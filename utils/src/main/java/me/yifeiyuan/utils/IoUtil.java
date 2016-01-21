@@ -31,6 +31,7 @@ public class IoUtil {
         try {
             closeable.close();
         } catch (Exception e) {
+            //do nothing
         }
     }
 }
