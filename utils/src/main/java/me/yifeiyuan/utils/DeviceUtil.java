@@ -19,6 +19,7 @@ package me.yifeiyuan.utils;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
+import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.telephony.TelephonyManager;
@@ -55,6 +56,12 @@ public class DeviceUtil {
     public static String getDeviceId(@NonNull Context context) {
         TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
         return tm.getDeviceId();
+    }
+
+
+    public static String getMacAddress(@NonNull Context context) {
+        WifiManager wifi = (WifiManager) context.getSystemService(Context.WIFI_SERVICE);
+        return wifi.getConnectionInfo().getMacAddress();
     }
 
     /**
