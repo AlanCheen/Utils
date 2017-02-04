@@ -21,7 +21,12 @@ import java.io.Closeable;
 /**
  * Created by 程序亦非猿 on 15/12/29.
  */
-public class IoUtil {
+public final class IoUtil {
+
+    private IoUtil() {
+        //no instance
+        throw new AssertionError("No instances.");
+    }
 
     /**
      * 一般用于关闭流

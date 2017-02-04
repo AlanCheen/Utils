@@ -27,7 +27,12 @@ import android.view.inputmethod.InputMethodManager;
  *
  *  隐藏/显示输入法
  */
-public class ImmUtil {
+public final class ImmUtil {
+
+    private ImmUtil() {
+        //no instance
+        throw new AssertionError("No instances.");
+    }
 
     /**
      * 隐藏输入法

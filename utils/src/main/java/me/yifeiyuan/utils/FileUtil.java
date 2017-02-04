@@ -19,5 +19,10 @@ package me.yifeiyuan.utils;
 /**
  * Created by 程序亦非猿 on 15/12/26.
  */
-public class FileUtil {
+public final class FileUtil {
+
+    private FileUtil() {
+        //no instance
+        throw new AssertionError("No instances.");
+    }
 }

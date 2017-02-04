@@ -23,6 +23,11 @@ import android.os.Environment;
  */
 public class SDCardUtil {
 
+    private SDCardUtil() {
+        //no instance
+        throw new AssertionError("No instances.");
+    }
+
     /**
      * @return 外部SD卡是否可用
      */

@@ -26,6 +26,10 @@ import java.util.regex.Pattern;
  */
 public class PatternUtil {
 
+    private PatternUtil() {
+        //no instance
+        throw new AssertionError("No instances.");
+    }
 
     /**
      * 判断是否是手机号码 13 14 15 17 18 开头

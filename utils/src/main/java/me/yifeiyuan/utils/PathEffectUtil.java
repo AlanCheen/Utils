@@ -22,7 +22,12 @@ import android.graphics.Path;
 /**
  * Created by 程序亦非猿 on 15/12/27.
  */
-public class PathEffectUtil {
+public final class PathEffectUtil {
+
+    private PathEffectUtil() {
+        //no instance
+        throw new AssertionError("No instances.");
+    }
 
     /**
      * 生成一个可用作Path动画的DashPathEffect

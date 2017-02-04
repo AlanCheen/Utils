@@ -23,7 +23,12 @@ import android.content.pm.PackageManager;
 /**
  * Created by 程序亦非猿 on 15/12/28.
  */
-public class AppUtil {
+public final class AppUtil {
+
+    private AppUtil() {
+        //no instance
+        throw new AssertionError("No instances.");
+    }
 
     /**
      * 获取app的版本名

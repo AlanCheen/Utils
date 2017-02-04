@@ -33,6 +33,11 @@ import android.view.WindowManager;
  */
 public class ScreenUtil {
 
+    private ScreenUtil() {
+        //no instance
+        throw new AssertionError("No instances.");
+    }
+
     /**
      * 获得屏幕高度
      *

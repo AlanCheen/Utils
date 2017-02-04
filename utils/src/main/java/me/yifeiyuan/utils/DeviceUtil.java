@@ -37,7 +37,12 @@ import java.io.FileFilter;
  * 4.getCurNetType          当前网络
  * 5.getCountOfCPU          获取设备CPU数量
  */
-public class DeviceUtil {
+public final class DeviceUtil {
+
+    private DeviceUtil() {
+        //no instance
+        throw new AssertionError("No instances.");
+    }
 
     /**
      * 默认单核

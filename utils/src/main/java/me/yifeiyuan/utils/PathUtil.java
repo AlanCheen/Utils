@@ -22,7 +22,12 @@ import android.support.annotation.NonNull;
 /**
  * Created by 程序亦非猿 on 15/12/26.
  */
-public class PathUtil {
+public final class PathUtil {
+
+    private PathUtil() {
+        //no instance
+        throw new AssertionError("No instances.");
+    }
 
     /**
      *  测量path的长度

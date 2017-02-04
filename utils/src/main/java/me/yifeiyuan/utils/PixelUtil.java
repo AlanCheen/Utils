@@ -25,6 +25,11 @@ import android.util.TypedValue;
  */
 public class PixelUtil {
 
+    private PixelUtil() {
+        //no instance
+        throw new AssertionError("No instances.");
+    }
+
     public static float dp2px(@NonNull Context context, float dpValue) {
         return TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, dpValue, context.getResources().getDisplayMetrics());
     }

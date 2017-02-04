@@ -38,7 +38,12 @@ import java.io.OutputStream;
  *
  * 存放跟Bitmap相关的util
  */
-public class BitmapUtil {
+public final class BitmapUtil {
+
+    private BitmapUtil() {
+        //no instance
+        throw new AssertionError("No instances.");
+    }
 
     /**
      * 将Bitmap保存到file中
