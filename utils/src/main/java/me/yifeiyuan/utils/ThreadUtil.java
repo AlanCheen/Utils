@@ -23,7 +23,7 @@ import android.os.Looper;
  *
  * 线程相关工具类
  */
-public class ThreadUtil {
+public final class ThreadUtil {
 
     private ThreadUtil() {
         //no instance
