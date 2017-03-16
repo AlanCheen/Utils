@@ -22,6 +22,9 @@ import android.util.TypedValue;
 
 /**
  * Created by 程序亦非猿 on 15/12/28.
+ *
+ * px dp sp 相互转化
+ *
  */
 public class PixelUtil {
 

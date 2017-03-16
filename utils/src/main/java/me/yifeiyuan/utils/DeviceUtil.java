@@ -103,7 +103,7 @@ public final class DeviceUtil {
      * @param context
      * @return 没网返回"" , 有网返回 2g / 3g /4g/wifi
      */
-    public static String getCurNetType(@NonNull Context context) {
+    public static String getCurrNetType(@NonNull Context context) {
         String type = "";
         ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo info = cm.getActiveNetworkInfo();
